@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#EEEEEE">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivVehicleIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_circle_light"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_directions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_top_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPlateNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="ABC-1234"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/ibDelete"
+            app:layout_constraintStart_toEndOf="@id/ivVehicleIcon"
+            app:layout_top_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvVehicleInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Manufacturer • Model • Color"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            app:layout_constraintEnd_toStartOf="@+id/ibDelete"
+            app:layout_constraintStart_toStartOf="@id/tvPlateNumber"
+            app:layout_top_toBottomOf="@id/tvPlateNumber" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAutoPay"
+            style="@style/Widget.Material3.Chip.Assist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Auto-Pay Active"
+            android:textColor="#2E7D32"
+            app:chipIcon="@android:drawable/checkbox_on_background"
+            app:chipIconTint="#2E7D32"
+            app:chipSurfaceColor="#E8F5E9"
+            app:layout_constraintStart_toStartOf="@id/tvPlateNumber"
+            app:layout_top_toBottomOf="@id/tvVehicleInfo"
+            app:chipMinHeight="24dp"
+            android:textSize="10sp"/>
+
+        <ImageButton
+            android:id="@+id/ibDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_top_toTopOf="parent"
+            app:tint="@android:color/holo_red_light" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
